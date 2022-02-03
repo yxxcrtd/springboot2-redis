@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Override
-    @Cacheable(value = "user", key = "#username", unless="#result == null") // 查询为空时，不缓存（默认空会缓存）
+    @Cacheable("user")
     public User getUser(String username) {
         System.out.println("==============incoming......==============");
 
